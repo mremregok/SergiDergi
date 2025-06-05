@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>FlipHTML5 Başlangıç Sayfası</title>
+</head>
+<body>
+
+    <iframe id="flipbook" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+
+    <script>
+        // URL'den query parametrelerini oku
+        const params = new URLSearchParams(window.location.search);
+        const page = params.get("p") || "1"; // p yoksa 1. sayfa
+
+        // FlipHTML5 yayının temel bağlantısını yaz
+        const flipBaseUrl = "https://online.fliphtml5.com/gfeiun/qjup"; // <- bunu kendi yayın adresinle değiştir
+
+        // iframe src'sini oluştur
+        const iframe = document.getElementById("flipbook");
+        iframe.src = `${flipBaseUrl}#p=${page}`;
+    </script>
+
+</body>
+</html>
